@@ -1,0 +1,35 @@
+reset
+#set encoding iso_8859_1
+#set term post landscape enhanced "Helvetica" 17 color solid
+#set term post landscape enhanced color solid
+set out 'curva_fase.jpg'
+#set title "{/=20 curva de luz OGLE-II LMC SC20 114257}"
+set ylabel "flujo relativo"
+set xlabel "fase"
+set yrange[-0.05:3.0]
+set xrange[0:1.0]  
+set pointsize 1.5
+set grid ytics
+#plot 'UOph-magnitudU.dat' using 1:2 with lines ,\
+#      "salidalc.txt" using 1:2 title "MACHO Filtro R"  with point
+      
+plot "salidalc1.txt" using 1:2 title "modelo" with point ,\
+    'UOph-magnitudU1.dat' using 1:2 title "U OPh Filtro U"  with point
+    
+    
+#  Con parametros de Dan Bruton  SQR = 2.0516182410434326E-002   puntos   825
+#  Con parametros de Vaz  2007   SQR = 3.5419665561098003E-003  puntos    825
+#   Masas:  M1    5.2699999999999996       M2    4.7400000000000002     
+#  Radios:  R1   0.34799999999999998       R2   0.31100000000000000     
+#  Masas:  L1    1.5520000000000000       L2    1.0000000000000000     
+#  Inclinacion : I    88.500000000000000     
+#  PHI :    0.0000000000000000 
+
+
+#    Inclin = 90.0  SQR =   3.5191318580797895E-003  puntos    825
+#    Inclin = 89.5  SQR =   3.5198763666256950E-003  puntos    825
+#    Inclin = 89.0  SQR =   3.5245719124176100E-003  puntos    825
+#    Inclin = 88.5  SQR =   3.5419665561098003E-003  puntos    825
+#    Inclin = 88.0  SQR =   3.5903598700899658E-003  puntos    825
+#    Inclin = 87.5  SQR =   3.7056284640282341E-003  puntos    825
+
